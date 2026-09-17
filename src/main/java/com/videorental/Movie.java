@@ -1,27 +1,32 @@
 package com.videorental;
 
-public class Movie {
-	public static final int CHILDRENS = 2;
-	public static final int REGULAR = 0;
-	public static final int NEW_RELEASE = 1;
-	
-	private String title;
-	private int priceCode;
+public abstract class Movie {
 
-	public Movie(String title, int priceCode) {
-		this.title = title;
-		this.priceCode = priceCode;
-	}
+    public static final int CHILDRENS = 2;
+    public static final int REGULAR = 0;
+    public static final int NEW_RELEASE = 1;
 
-	public int getPriceCode() {
-		return priceCode;
-	}
+    private String title;
+    private int priceCode;
 
-	public void setPriceCode(int arg) {
-		priceCode = arg;
-	}
+    public Movie(String title, int priceCode) {
+        this.title = title;
+        this.priceCode = priceCode;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public int getPriceCode() {
+        return priceCode;
+    }
+
+    public void setPriceCode(int arg) {
+        priceCode = arg;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    abstract double getChargeFor(int daysRented);
+
+    abstract int getFrequentRenterPointsFor(int daysRented);
 }
